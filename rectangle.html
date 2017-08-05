@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <canvas id="drawing" width="640" height="480">使用 Canvas 绘图</canvas>
+<script type="text/javascript">
+    var drawing = document.getElementById('drawing');
+
+    // 导出绘制的图像
+    // if (drawing.getContext) {
+    //     var imgURI = drawing.toDataURL("image/png");
+    //     var image = document.createElement('img');
+    //     image.src = imgURI;
+    //     document.body.appendChild(image);
+    // }
+
+    // if (drawing.getContext) {
+    //     var context = drawing.getContext("2d"); // 设置 2D 绘图环境
+    //     context.strokeStyle = "indigo"; // 描边风格
+    //     context.fillStyle = "purple"; // 填充风格
+    //     context.strokeRect(10, 10, 320, 240); // 描边矩形 矩形的 x 坐标, y 坐标, 宽度和高度
+    //     context.fillRect(10, 10, 320, 240); // 填充矩形
+
+    //     context.strokeStyle = "violet";
+    //     context.fillStyle = "rgba(0, 0, 255, 0.5)";
+    //     context.strokeRect(100, 100, 320, 240);
+    //     context.fillRect(100, 100, 320, 240);
+
+    //     context.clearRect(150, 150, 100, 100);
+    // }
+
+    if (drawing.getContext) {
+        var context = drawing.getContext("2d");
+        // context.strokeStyle = "violet";
+        // context.fillStyle = "purple";
+        context.beginPath(); // 开始路径
+        context.arc(100, 100, 99, 0, 2 * Math.PI, false); // 绘制外圆
+        context.moveTo(194, 100); // 避免绘制出多余的线条
+        context.arc(100, 100, 94, 0, 2 * Math.PI, false); // 绘制内圆
+
+        context.moveTo(100, 100); // 绘制分针
+        context.lineTo(100, 15);
+
+        context.moveTo(100, 100); // 绘制时针
+        context.lineTo(35, 100);
+
+        context.stroke();
+        // context.fill();
+
+        context.font = "bold 14px Arial"; // 绘制文本
+        context.textAlign = "center";
+        context.textBaseline = "middle";
+        context.fillText("12", 100, 20);
+
+        var fontSize = 100; // 最大宽度不超过测量宽度
+        context.font = fontSize + "px Arial";
+        while(context.measureText("Hello world!").width > 140){
+            fontSize--;
+            context.font = fontSize + "px Arial";
+        }
+        context.fillText("Hello World!", 280, 110);
+        // context.fillText("Font size is " + fontSize + "px", 280, 150);
+    }
+</script>
+</body>
+</html>
