@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+<body>
+<script type="text/javascript">
+    var lorem = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis, corporis.";
+    var pos = 0;
+    var arr = [];
+    while (true) {
+        pos = lorem.indexOf('e', pos);
+        if (pos > -1) {
+            arr.push(pos);
+        } else {
+            break;
+        }
+        pos++;
+    }
+    console.log(arr.toString());
+
+</script>
+</body>
+</html>

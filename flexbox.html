@@ -1,0 +1,195 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style type="text/css">
+    ul{
+        list-style: none;
+        display:flex;
+        border: 1px solid red;
+        padding: 0;
+        background-color: #e8e8e9;
+    }
+    li{
+        /*flex-grow和flex-shrink属性控制Flex项目在容器有多余的空间如何放大（扩展），在没有额外空间又如何缩小。*/
+
+        /*flex-basis设置为auto，这意味着Flex项目的初始宽度计算是基于内容的大小。*/
+        /*如果没有 flex 时的默认值*/
+        /*flex:0 1 auto; */
+
+        /*Flex项目的初始宽度是零（flex-basis: 0），并且它们会伸展以适应可用空间。当有两到多个Flex项目的 flex-basis 取值为0时，它们会基于 flex-grow值共享可用空间。*/
+        /*此时 basis 为 0*/
+        /*flex:1 1;*/
+
+        /*flex: auto;*/
+        /*flex:1 0 0;*/
+        /*flex:1 1 0;*/
+        /*flex:1 1 auto;*/
+        /*flex:0 0 0;*/
+
+        border: 2px solid red;
+        margin: 2em;
+        /*width:300px;*/
+        /*height:100px;*/
+    }
+</style>
+</head>
+  <ul>
+    <li>This is just a shorter random text.</li>
+    <li>
+        This is just some random text  to buttress the point being explained.
+           Some more random text to buttress the point being explained.
+    </li>
+  </ul>
+  <div id="another">
+
+  </div>
+
+  <div id="parent">
+    <span id="child">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </span>
+    <span>
+        <br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined index: upload in C:\wamp\web\upload\upload.php on line <i>5</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0000</td><td bgcolor='#eeeeec' align='right'>125960</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp\web\upload\upload.php' bgcolor='#eeeeec'>...\upload.php<b>:</b>0</td></tr>
+</table></font>
+<br />
+<font size='1'><table class='xdebug-error xe-notice' dir='ltr' border='1' cellspacing='0' cellpadding='1'>
+<tr><th align='left' bgcolor='#f57900' colspan="5"><span style='background-color: #cc0000; color: #fce94f; font-size: x-large;'>( ! )</span> Notice: Undefined index: upload in C:\wamp\web\upload\upload.php on line <i>9</i></th></tr>
+<tr><th align='left' bgcolor='#e9b96e' colspan='5'>Call Stack</th></tr>
+<tr><th align='center' bgcolor='#eeeeec'>#</th><th align='left' bgcolor='#eeeeec'>Time</th><th align='left' bgcolor='#eeeeec'>Memory</th><th align='left' bgcolor='#eeeeec'>Function</th><th align='left' bgcolor='#eeeeec'>Location</th></tr>
+<tr><td bgcolor='#eeeeec' align='center'>1</td><td bgcolor='#eeeeec' align='center'>0.0000</td><td bgcolor='#eeeeec' align='right'>125960</td><td bgcolor='#eeeeec'>{main}(  )</td><td title='C:\wamp\web\upload\upload.php' bgcolor='#eeeeec'>...\upload.php<b>:</b>0</td></tr>
+</table></font>
+    </span>
+  </div>
+  <ul id="menu" style="position: absolute;visibility: hidden;background-color: purple;">
+      <li><a href="#">menu1</a></li>
+      <li><a href="#">menu2</a></li>
+      <li><a href="#">menu3</a></li>
+      <li><a href="#">menu4</a></li>
+      <li><a href="#">menu5</a></li>
+  </ul>
+  <input type="hidden"></input>
+  <style type="text/css">
+
+    #parent {
+        /*position: relative;*/
+        margin: 0px 55px;
+        width: 1024px;
+        height: 768px;
+        border: 1px solid;
+    }
+    #child {
+        /*position: absolute;*/
+        margin: 0px 100px;
+        /*padding: 0px 100px;*/
+        width: 200px;
+        height: 100px;
+        border: 1px solid red;
+        overflow: scroll;
+    }
+    body {
+        margin: 0px;
+        /*position: absolute;*/
+    }
+  </style>
+  <script type="text/javascript">
+    var oMenu = document.querySelector('#menu');
+    var oParentDiv = document.querySelector('#parent');
+    var oChildDiv = document.querySelector('#child');
+
+    function fn() {
+        console.log("arguments.callee & caller");
+        console.info(arguments.callee);
+        console.info(fn.caller);
+    }
+
+    function fc() {
+        fn();
+    }
+
+    fc();
+
+    window.addEventListener('haschange', function(event) {
+        alert("has changed");
+    });
+
+    // window.addEventListener('pageshow', function(event) {
+    //     console.log(event.persisted);
+    // });
+    // window.addEventListener('pagehide', function(event) {
+    //     console.log(event.persisted);
+    // });
+
+    // oParentDiv.addEventListener('contextmenu', function(event) {
+    //     event.preventDefault();
+    //     console.info(document.body.scrollTop);
+    //     var top = document.body.scrollTop || document.documentElement.scrollTop;
+    //     oMenu.style.left = event.clientX + "px";
+    //     oMenu.style.top = event.clientY +  top + "px";
+    //     oMenu.style.visibility = 'visible';
+    // });
+    // document.addEventListener('click', function() {
+    //     oMenu.style.visibility = 'hidden';
+    // });
+    // oMenu.addEventListener('contextmenu', function(event) {
+    //     event.preventDefault();
+    // });
+
+    // document.addEventListener('keydown', function(event) {
+    //     alert('parent');
+    //     console.log("parrent target: " + event.target);
+    //     console.log("parent currentTarget: " + event.currentTarget);
+    // }, true);
+    // oParentDiv.addEventListener('keydown', function(event) {
+    //     alert('child');
+    //     console.log("child target: " + event.target);
+    //     console.log("child currentTarget: " + event.currentTarget);
+    // }, true);
+
+
+      // console.info(oParentDiv.offsetWidth);
+      // console.info(oParentDiv.offsetHeight);
+      // console.info(oChildDiv.offsetWidth);
+      // console.info(oChildDiv.offsetHeight);
+      // console.info(oParentDiv.offsetLeft);
+      // console.info(oParentDiv.offsetTop);
+      // console.info(oChildDiv.offsetTop);
+
+      // console.log(oChildDiv.offsetParent.offsetLeft);
+      // console.log('offsetParent');
+      // console.info(oChildDiv.parentNode.offsetLeft);
+      // console.log('offsetParent');
+      // console.log(window.getComputedStyle(document.body).position);
+      // console.log("scrollWidth: " + oChildDiv.scrollWidth);
+      // console.log("scrollHeight: " + oChildDiv.scrollHeight);
+      // oChildDiv.scrollTop = oChildDiv.scrollHeight - oChildDiv.clientHeight - 10;
+      // console.log("scrollTop: " + oChildDiv.scrollTop);
+      // console.log("scrollLeft: " + oChildDiv.scrollLeft)
+      // console.log("clientWidth: " + oChildDiv.clientWidth);
+      // console.log("clientHeight: " + oChildDiv.clientHeight);
+      // console.log("offsetWidth: " + oChildDiv.offsetWidth);
+      // console.log("offsetHeight: " + oChildDiv.offsetHeight);
+      // console.log("offsetLeft: " + oChildDiv.offsetLeft);
+      // console.log("offsetTop: " + oChildDiv.offsetTop);
+      // console.info(document.body.offsetWidth);
+      // console.info(document.body.offsetHeight);
+      // console.info(document.body.clientWidth);
+      // console.info(document.body.clientHeight);
+
+
+
+  </script>
+<body>
+</body>
+</html>

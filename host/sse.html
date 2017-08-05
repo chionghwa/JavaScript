@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<body>
+    
+<div id="sse">
+  <!--<eventsource src="./streaming.php" />-->
+</div>
+    <script>
+        var oSSE = document.querySelector('#sse');
+        var sse = new EventSource("./streaming.php");
+        sse.onopen = function(event) {
+            console.log("Start");
+        };
+        sse.onmessage = function(event) {
+            oSSE.innerHTML += event.data;
+        };
+        sse.onerror = function(event) {
+            console.log("Done");
+        };
+    </script>
+</body>
+</html>

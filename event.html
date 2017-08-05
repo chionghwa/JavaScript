@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+</head>
+
+<body>
+    <textarea rows="5" cols="25">initial value</textarea>
+
+<form name="formList">
+    <select name="location" id="selLocation">
+        <option value="Japan">japan</option>
+        <option value="China">china</option>
+        <option value="America">america</option>
+        <option value="">Sinkiang</option>
+        <option value="Tibetan"></option>
+    </select>
+    <input type="radio" name="sex">male</input>
+    <input type="radio" name="sex">female</input>
+    <input type="submit"></input>
+</form>
+
+    <div>
+    </div>
+<script type="text/javascript">
+    oFom = document.forms[0];
+    oSel = document.forms[0].elements[0];
+
+    oRadio = oFom.elements["sex"];
+    // console.log(oRadio);
+    // oRadio[1].checked = true;
+    oRadio[0].checked = true;
+    oRadio[0].checked = null;
+    // console.log(oSel);
+    // oSel.addEventListener('change', function(event) {
+    //     console.info(this.value);
+    //     console.log(oSel.options[4].text);
+    //     console.log(oSel.options[4].value);
+    //     console.info(oSel.selectedIndex);
+    // });
+    // oFom.addEventListener('submit', function(event) {
+    //     console.info(this);
+    //     event.preventDefault();
+    // });
+
+</script>
+</body>
+<style type="text/css">
+    div {
+        display: flex;
+        width: 600px;
+        height: 400px;
+        border: red solid 1px;
+    }
+</style>
+<script type="text/javascript">
+    // var oForm = document.forms[0];
+
+    // oForm.addEventListener('submit', function(event) {
+    //     console.info(oForm[0].validity.valueMissing);
+    //     event.preventDefault();
+    // });
+
+
+    // var oTxtBox = document.querySelector('textarea');
+    // oTxtBox.value = "Hello world!";
+
+
+
+    // oTxtBox.addEventListener('keypress', function(event) {
+    // if (!/\d/.test(String.fromCharCode(event.charCode)) && event.charCode != 0 && event.charCode != 13 && !event.ctrlKey) {
+    //         event.preventDefault();
+    //     }
+    // });
+
+    // oTxtBox.addEventListener('paste', function(event) {
+    //     var sTxt = event.clipboardData.getData("text/plain");
+    //     if (!/\d+/.test(sTxt)) {
+    //         event.preventDefault();
+    //     }
+    // });
+
+
+
+    // oTxtArea.setAttribute('value', 'hahahahahah');
+    // oTxtArea.value = 'hahahahahah';
+    // oTxtArea.firstChild.nodeValue = 'hahahahahahha';
+    // console.log(oTxtArea.firstChild.nodeValue);
+    // oTxtArea.setAttribute('value', 30);
+    // oTxtBox.select();
+    // oTxtBox.addEventListener('focus', function(event) {
+    //     event.target.select();
+    // });
+
+    // oTxtBox.addEventListener('select', function(event) {
+    //     console.log(event.target.value.slice(this.selectionStart, this.selectionEnd));
+    // });
+
+    // oTxtBox.focus();
+    // oTxtBox.setSelectionRange(1, 5);
+
+    // var oDiv = document.querySelector('div');
+    // document.addEventListener('click', function(event) {
+    //     // alert(event.target);
+    //     console.log(event.target);
+    // }, true);
+</script>
+</html>
