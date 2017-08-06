@@ -26,4 +26,4 @@
 
 var p1 = new Person("Tom");
 console.log(p1.getName());
-//console.log(name);
+console.log(name);
