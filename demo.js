@@ -9,7 +9,7 @@
 //var person1 = new Person();
 //var person2 = new Person();
 
-//console.info(person1.__proto__);
+/* console.info(person1.__proto__); */
 
 (function(){
     var name = "";
