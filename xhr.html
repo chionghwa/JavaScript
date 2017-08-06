@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+        window.onload = function(that) {
+            function start() {
+                var username = encodeURIComponent(that.value);
+                var xhr = new XMLHttpRequest();
+                xhr.open('post', 'xhr.php?username=' + username);
+                xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded');
+                xhr.send('age=' + 21);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        alert(xhr.responseText);
+                    }
+                }
+            }
+            return start;
+        }
+    </script>
+</head>
+<body>
+    <h4>异步请求</h4>
+    <p>
+        <input type="text" name="username" id="username">
+        <input type="submit" value="提交" onclick="window.onload(this.previousElementSibling)()">
+    </p>
+</body>
+</html>
